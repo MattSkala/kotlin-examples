@@ -1,5 +1,16 @@
 apply plugin: 'kotlin-multiplatform'
+apply plugin: 'com.android.library'
 
+android {
+    compileSdkVersion 27
+
+    sourceSets {
+        main {
+            manifest.srcFile "src/androidMain/AndroidManifest.xml"
+            java.srcDirs += "src/androidMain/kotlin"
+        }
+    }
+}
 
 kotlin {
     targets {
